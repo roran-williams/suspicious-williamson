@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function FeaturePost() {
   return (
@@ -18,3 +19,12 @@ export default function FeaturePost() {
     </div>
   );
 }
+
+export function FeaturePostImage(props) {
+  return <img className="rounded img-fluid" src={props.source} />;
+}
+
+FeaturePostImage.propTypes = {
+  // Ensure source is a required string
+  source: PropTypes.string.isRequired,
+};

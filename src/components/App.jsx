@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./header";
 import Svgs from "./svgs";
-import FeaturePost from "./feature-post";
+import FeaturePost, { FeaturePostImage } from "./feature-post";
 import CardPost from "./card-posts";
 import BloggerTitle from "./bloger-title";
 import ArticleOne from "./article-one";
@@ -21,12 +21,18 @@ export default function App() {
       <Svgs />
       <Header />
       <main className="container">
-        <div className="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
-          <div className="col-lg-6 px-0">
-            <FeaturePost />
+        <div className="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary ">
+          <div className="row">
+            <div className="col-lg-6 px-0">
+              <FeaturePost />
+            </div>
+            <div className="col-lg-6 ">
+              <FeaturePostImage source="https://source.unsplash.com/1600x900/?nature" />
+            </div>
           </div>
         </div>
         <CardPost />
+
         <div className="row g-5">
           <div className="col-md-8">
             <BloggerTitle />
