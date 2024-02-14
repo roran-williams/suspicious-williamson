@@ -1,13 +1,12 @@
 import React from "react";
+import { about } from "./blogs";
+
 export default function About() {
+  const { title, content } = about;
   return (
     <div className="p-4 mb-3 bg-body-tertiary rounded">
-      <h4 className="fst-italic">About</h4>
-      <p className="mb-0">
-        Customize this section to tell your visitors a little bit about your
-        publication, writers, content, or something else entirely. Totally up to
-        you.
-      </p>
+      <h4 className="fst-italic">{title}</h4>
+      <p className="mb-0">{content}</p>
     </div>
   );
 }

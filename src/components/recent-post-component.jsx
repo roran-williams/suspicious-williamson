@@ -1,12 +1,14 @@
 import React from "react";
 import Image from "./image";
 import AnchorTag from "./anchor-tag";
-import { RecentPosts } from "./blogs";
+import Blogs from "./blogs";
 
 export default function Posts() {
   return (
     <ul className="list-unstyled">
-      {RecentPosts.map((post, index) => (
+      {Blogs.filter(
+        (post) => post.type === "Article" && post.id >= 3 && post.id <= 6,
+      ).map((post, index) => (
         <li key={index}>
           <AnchorTag
             className="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"

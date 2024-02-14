@@ -5,7 +5,7 @@ import Svgs from "./svgs";
 import FeaturePost, { FeaturePostImage } from "./feature-post";
 import CardPost from "./card-posts";
 import BloggerTitle from "./bloger-title";
-import Article from "./article-one";
+import Article from "./articles";
 import ArticleNavigation from "./article-navigation";
 import About from "./about";
 import RecentPost from "./recent-post";
