@@ -5,9 +5,7 @@ import Svgs from "./svgs";
 import FeaturePost, { FeaturePostImage } from "./feature-post";
 import CardPost from "./card-posts";
 import BloggerTitle from "./bloger-title";
-import ArticleOne from "./article-one";
-import ArticleTwo from "./article-two";
-import ArticleThree from "./article-three";
+import Article from "./article-one";
 import ArticleNavigation from "./article-navigation";
 import About from "./about";
 import RecentPost from "./recent-post";
@@ -36,9 +34,7 @@ export default function App() {
         <div className="row g-5">
           <div className="col-md-8">
             <BloggerTitle />
-            <ArticleOne />
-            <ArticleTwo />
-            <ArticleThree />
+            <Article />
             <ArticleNavigation />
           </div>
           <div className="col-md-4">

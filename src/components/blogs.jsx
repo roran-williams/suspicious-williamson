@@ -55,6 +55,32 @@ const FeaturedPosts = {
     "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this posts contents.",
   image: "https://picsum.photos/id/237/500/300",
 };
+const articles = [
+  {
+    title: "Blog post title",
+    date: "January 1, 2021",
+    authorName: "Mark",
+    authorLink: "#",
+    content:
+      " This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected.This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We&apos;ll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.This is an example blockquote in action: Quoted text goes here.This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We&apos;ll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.",
+  },
+  {
+    title: "Blog post title",
+    date: "January 1, 2021",
+    authorName: "Mark",
+    authorLink: "#",
+    content:
+      " This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected.This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We&apos;ll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.This is an example blockquote in action: Quoted text goes here.This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We&apos;ll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.",
+  },
+  {
+    title: "Blog post title",
+    date: "January 1, 2021",
+    authorName: "Mark",
+    authorLink: "#",
+    content:
+      " This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected.This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We&apos;ll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.This is an example blockquote in action: Quoted text goes here.This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We&apos;ll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.",
+  },
+];
 
 export default cardBlogs;
-export { RecentPosts, topics, FeaturedPosts };
+export { RecentPosts, topics, FeaturedPosts, articles };
