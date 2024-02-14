@@ -1,30 +1,22 @@
 import React from "react";
-import PropTypes from "prop-types";
+import Image from "./image";
+import AnchorTag from "./anchor-tag";
+import { FeaturedPosts } from "./blogs";
 
 export default function FeaturePost() {
   return (
     <div>
-      <h1 className="display-4 fst-italic">
-        Title of a longer featured blog post
-      </h1>
-      <p className="lead my-3">
-        Multiple lines of text that form the lede, informing new readers quickly
-        and efficiently about what’s most interesting in this post’s contents.
-      </p>
+      <h1 className="display-4 fst-italic">{FeaturedPosts.Title}</h1>
+      <p className="lead my-3">{FeaturedPosts.content}</p>
       <p className="lead mb-0">
-        <a href="#" className="text-body-emphasis fw-bold">
+        <AnchorTag href="#" className="text-body-emphasis fw-bold">
           Continue reading...
-        </a>
+        </AnchorTag>
       </p>
     </div>
   );
 }
 
-export function FeaturePostImage(props) {
-  return <img className="rounded img-fluid" src={props.source} />;
+export function FeaturePostImage() {
+  return <Image className="rounded img-fluid" src={FeaturedPosts.image} />;
 }
-
-FeaturePostImage.propTypes = {
-  // Ensure source is a required string
-  source: PropTypes.string.isRequired,
-};

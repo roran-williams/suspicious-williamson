@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "./image";
 import cardBlogs from "./blogs";
+import AnchorTag from "./anchor-tag";
 
 export default function CardPost() {
   return (
@@ -15,7 +16,7 @@ export default function CardPost() {
               <h3 className="mb-0">{card.title}</h3>
               <div className="mb-1 text-body-secondary">{card.date}</div>
               <p className="card-text mb-auto">{card.content}</p>
-              <a
+              <AnchorTag
                 href="#"
                 className="icon-link gap-1 icon-link-hover stretched-link"
               >
@@ -23,7 +24,7 @@ export default function CardPost() {
                 <svg className="bi">
                   <use xlinkHref="#chevron-right" />
                 </svg>
-              </a>
+              </AnchorTag>
             </div>
             {/* Use index to get the corresponding image for each card */}
             <div className="col-auto d-none d-lg-block">

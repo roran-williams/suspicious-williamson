@@ -27,7 +27,7 @@ export default function App() {
               <FeaturePost />
             </div>
             <div className="col-lg-6 ">
-              <FeaturePostImage source="https://source.unsplash.com/1600x900/?nature" />
+              <FeaturePostImage />
             </div>
           </div>
         </div>

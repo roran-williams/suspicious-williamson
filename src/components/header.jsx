@@ -1,4 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
+import AnchorTag from "./anchor-tag";
+import PropTypes from "prop-types";
+import { topics } from "./blogs";
+
+function Topic({ topic, isActive, onClick }) {
+  return (
+    <AnchorTag
+      onClick={() => onClick(topic)}
+      className={
+        isActive
+          ? "nav-item nav-link link-body-emphasis active"
+          : "nav-item nav-link link-body-emphasis"
+      }
+      href="#"
+    >
+      {topic}
+    </AnchorTag>
+  );
+}
+
+Topic.propTypes = {
+  topic: PropTypes.string.isRequired,
+  isActive: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
+function Topics() {
+  const [activeTopic, setActiveTopic] = useState(null);
+
+  const handleClick = (topic) => {
+    setActiveTopic(topic === activeTopic ? null : topic);
+  };
+
+  return (
+    <div className="nav-scroller py-1 mb-3 border-bottom">
+      <nav className="nav nav-underline justify-content-between">
+        {topics.map((topic, index) => (
+          <Topic
+            key={index}
+            topic={topic}
+            isActive={topic === activeTopic}
+            onClick={handleClick}
+          />
+        ))}
+      </nav>
+    </div>
+  );
+}
 
 export default function Header() {
   return (
@@ -45,46 +93,7 @@ export default function Header() {
         </div>
       </header>
 
-      <div className="nav-scroller py-1 mb-3 border-bottom">
-        <nav className="nav nav-underline justify-content-between">
-          <a className="nav-item nav-link link-body-emphasis active" href="#">
-            World
-          </a>
-          <a className="nav-item nav-link link-body-emphasis" href="#">
-            U.S.
-          </a>
-          <a className="nav-item nav-link link-body-emphasis" href="#">
-            Technology
-          </a>
-          <a className="nav-item nav-link link-body-emphasis" href="#">
-            Design
-          </a>
-          <a className="nav-item nav-link link-body-emphasis" href="#">
-            Culture
-          </a>
-          <a className="nav-item nav-link link-body-emphasis" href="#">
-            Business
-          </a>
-          <a className="nav-item nav-link link-body-emphasis" href="#">
-            Politics
-          </a>
-          <a className="nav-item nav-link link-body-emphasis" href="#">
-            Opinion
-          </a>
-          <a className="nav-item nav-link link-body-emphasis" href="#">
-            Science
-          </a>
-          <a className="nav-item nav-link link-body-emphasis" href="#">
-            Health
-          </a>
-          <a className="nav-item nav-link link-body-emphasis" href="#">
-            Style
-          </a>
-          <a className="nav-item nav-link link-body-emphasis" href="#">
-            Travel
-          </a>
-        </nav>
-      </div>
+      <Topics />
     </div>
   );
 }
