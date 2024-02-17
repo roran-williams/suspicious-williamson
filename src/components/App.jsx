@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./header";
 import Svgs from "./svgs";
@@ -12,12 +12,33 @@ import RecentPost from "./recent-post";
 import Archives from "./archives";
 import SocialMedia from "./social-media";
 import Footer from "./footer";
+import cardBlogs from "./blogs";
 
 export default function App() {
+  const [isActive, setIsActive] = useState(false);
+  const [activeTopic, setActiveTopic] = useState("World");
+
+  // useEffect with side effect (example)
+  useEffect(() => {
+    console.log("activeTopic changed:", activeTopic);
+    // Perform any other side effects or operations here if needed
+  }, [activeTopic]);
+
+  function handleClick(topic) {
+    setActiveTopic(topic);
+    setIsActive(!isActive);
+    console.log(isActive);
+    console.log(topic);
+  }
+
   return (
     <div>
       <Svgs />
-      <Header />
+      <Header
+        onClick={handleClick}
+        isActive={isActive}
+        activeTopic={activeTopic}
+      />
       <main className="container">
         <div className="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary ">
           <div className="row">
@@ -29,7 +50,7 @@ export default function App() {
             </div>
           </div>
         </div>
-        <CardPost />
+        <CardPost Blogs={cardBlogs} activeTopic={activeTopic} />
 
         <div className="row g-5">
           <div className="col-md-8">

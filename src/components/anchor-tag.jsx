@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default function AnchorTag(props) {
   return (
-    <a onClick={props.onClick} className={props.className} href={props.href}>
+    <a onClick={props.onClick} className={props.className} href={props.href} id={props.id}>
       {props.children}
     </a>
   );
@@ -14,4 +14,5 @@ AnchorTag.propTypes = {
   href: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
+  id:PropTypes.string.isRequired,
 };

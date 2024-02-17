@@ -1,54 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import AnchorTag from "./anchor-tag";
+import Topics from "./topics";
 import PropTypes from "prop-types";
-import { topics } from "./blogs";
 
-function Topic({ topic, isActive, onClick }) {
-  return (
-    <AnchorTag
-      onClick={() => onClick(topic)}
-      className={
-        isActive
-          ? "nav-item nav-link link-body-emphasis active"
-          : "nav-item nav-link link-body-emphasis"
-      }
-      href="#"
-    >
-      {topic}
-    </AnchorTag>
-  );
-}
-
-Topic.propTypes = {
-  topic: PropTypes.string.isRequired,
-  isActive: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
-};
-
-function Topics() {
-  const [activeTopic, setActiveTopic] = useState(null);
-
-  const handleClick = (topic) => {
-    setActiveTopic(topic === activeTopic ? null : topic);
-  };
-
-  return (
-    <div className="nav-scroller py-1 mb-3 border-bottom">
-      <nav className="nav nav-underline justify-content-between">
-        {topics.map((topic, index) => (
-          <Topic
-            key={index}
-            topic={topic}
-            isActive={topic === activeTopic}
-            onClick={handleClick}
-          />
-        ))}
-      </nav>
-    </div>
-  );
-}
-
-export default function Header() {
+export default function Header(props) {
   return (
     <div className="container">
       <header className="border-bottom lh-1 py-3">
@@ -93,7 +48,17 @@ export default function Header() {
         </div>
       </header>
 
-      <Topics />
+      <Topics
+        onClick={props.onClick}
+        isActive={props.isActive}
+        activeTopic={props.activeTopic}
+      />
     </div>
   );
 }
+
+Header.propTypes = {
+  isActive: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+  activeTopic: PropTypes.string.isRequired,
+};
