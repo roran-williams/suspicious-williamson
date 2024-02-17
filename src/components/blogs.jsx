@@ -1,5 +1,6 @@
 const cardBlogs = [
   {
+    id: 5,
     topic: "World",
     title: "Featured post",
     date: "Nov 12",
@@ -8,12 +9,40 @@ const cardBlogs = [
     image: "https://source.unsplash.com/200x250/?food",
   },
   {
+    id: 4,
     topic: "World",
     title: "Featured post",
     date: "Nov 12",
     content:
       "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-    image: "https://source.unsplash.com/200x250/?lifestyle",
+    image: "https://source.unsplash.com/200x250/?food",
+  },
+  {
+    id: 3,
+    topic: "Health",
+    title: "Featured post",
+    date: "Nov 12",
+    content:
+      "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+    image: "https://source.unsplash.com/200x250/?health",
+  },
+  {
+    id: 2,
+    topic: "Culture",
+    title: "Featured post",
+    date: "Nov 12",
+    content:
+      "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+    image: "https://source.unsplash.com/200x250/?culture",
+  },
+  {
+    id: 1,
+    topic: "Culture",
+    title: "Featured post",
+    date: "Nov 12",
+    content:
+      "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+    image: "https://source.unsplash.com/200x250/?technology",
   },
 ];
 
